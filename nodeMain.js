@@ -5,6 +5,7 @@ var http = require('http');
 var url = require('url');
 var fs = require('fs');
 var path = require('path');
+var dotenv = require('dotenv').config({ path: 'C:\\Users\\lucas\\Documents\\YTChatConfig.env' }/*Probably not needed, more secure?*/);
 
 http.createServer(function(req, res) {
     if (req.url === '/') {

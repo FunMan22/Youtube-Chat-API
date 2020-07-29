@@ -1,3 +1,3 @@
 
 
-console.log("End");
+console.log("main.js successfully loaded!");
