@@ -27,6 +27,14 @@ http.createServer(function(req, res) {
             res.end();
             return;
         });
+    } else if (req.url === '/favicon.ico') {
+        fs.readFile(__dirname + '/favicon.ico', function (err, data) {
+            if (err) { throw err; }
+            res.writeHead(200, { 'Content-Type': 'image/png' });
+            res.write(data);
+            res.end();
+            return;
+        });
     }
 }).listen(port);
 
