@@ -1,0 +1,71 @@
+/*body, html {
+    margin: 0;
+    padding: 0;
+}*/
+
+body {
+    animation: fade 0.8s;
+    animation-play-state: paused;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    font-family: 'Nunito', sans-serif;
+}
+
+/*Custom Scrollbar*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #6a6a6a;
+}
+
+::selection {
+    background: #0060ff50;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
