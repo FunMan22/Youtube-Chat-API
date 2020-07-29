@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--<script type="text/javascript" src="file:///C:/Users/lucas/Documents/YTChatConfig.json"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript" src="main.js"></script>
         <link rel="icon" href="favicon.ico" type="image/png">
         <link rel="stylesheet" type="text/css" href="main.css">
-        <!--<script tyep="text/javascript" src="nodeMain.js"></script>-->
 
     </head>
 
@@ -19,6 +17,7 @@
         </script>
         <button onclick="alert(API_KEY)">CLICK ME!</button>
         <h1>HI</h1>
+        <div id="outputBox"></div>
         <script src="https://apis.google.com/js/api.js"></script>
         <script>
         /**
@@ -41,21 +40,31 @@
         }
         // Make sure the client is loaded and sign-in is complete before calling this method.
         function execute() {
+            // Added
+            gapi.client.setApiKey(API_KEY);
+            gapi.client.init({'apiKey': API_KEY, 'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest']}).then(function() {
+            /*gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest");*/
+            // Original
             return gapi.client.youtube.channels.list({
             "part": [
                 "snippet,contentDetails,statistics"
             ],
-            "mine": true
+            "id": [
+                "UC_x5XG1OV2P6uZZ5FSM9Ttw"
+            ]
             })
                 .then(function(response) {
                         // Handle the results here (response.result has the parsed body).
+                        document.getElementById("outputBox").innerHTML = JSON.stringify(response.result);
                         console.log("Response", response);
                     },
                     function(err) { console.error("Execute error", err); });
-        }
-        gapi.load("client:auth2", function() {
+        })}
+    
+        /*gapi.load("client:auth2", function() {
             gapi.auth2.init({client_id: CLIENT_ID});
-        });
+        });*/
+        gapi.load('client');
         </script>
         <button onclick="authenticate().then(loadClient)">authorize and load</button>
         <button onclick="execute()">execute</button>
