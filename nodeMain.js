@@ -14,7 +14,7 @@ http.createServer(function(req, res) {
                 throw err;
             }
             res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.write(data + process.env.API_KEY + '</div><script type="text/javascript" src="main.js"></script></body></html>'); 
+            res.write(data + process.env.API_KEY + '</div></body></html>'); 
             res.end();
             return;
         });

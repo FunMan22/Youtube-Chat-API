@@ -3,13 +3,16 @@
     <head>
         <!--<script type="text/javascript" src="file:///C:/Users/lucas/Documents/YTChatConfig.json"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="main.js"></script>
         <!--<script tyep="text/javascript" src="nodeMain.js"></script>-->
 
     </head>
 
     <body>
         <script>
-            /*alert(API_KEY);*/
+            $(document).ready(function() {
+                alert(window.API_KEY);
+            });
         </script>
         <button onclick="alert(document.getElementById('contentFromNode').innerHTML);">CLICK ME!</button>
         <h1>HI</h1>
