@@ -1,7 +1,7 @@
-/*body, html {
+body, html {
     margin: 0;
     padding: 0;
-}*/
+}
 
 body {
     animation: fade 0.8s;
@@ -69,3 +69,50 @@ p {
     to {opacity: 1}
 }
 
+
+#header {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f0f0f0;
+    box-shadow: #a7a7a7 0px 8px 8px 0px;
+    padding: 4px;
+    transform: translate(0px, -2px);
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(0.13, 0.42, 0.48, 1);
+}
+
+#header-img {
+    height: 100%;
+    transition: 0.5s;
+}
+
+#header-title {
+    font-family: 'Nunito';
+    margin: 0;
+    padding: 18px 0px;
+    padding-left: 10px;
+    font-size: 4em;
+    position: absolute;
+    display: inline;
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(0.13, 0.42, 0.48, 1) !important;
+}
+
+#outputBox {
+    border: 2px solid black;
+    padding: 1px;
+    margin: 12px;
+    max-width: 400px;
+}
+
+#outputBox-title {
+    font-family: 'Comfortaa';
+    padding: 10px;
+    padding-top: 40px;
+    margin: 0;
+}
